@@ -1,0 +1,77 @@
+extends layout
+
+block content
+  #banner.page-header
+    .row
+      .col-lg-6
+        h1 Fast Cart
+  -var p=[30 , 40 , 30 , 50 , 30];
+  -var item=['Dosa', 'Idli', 'Wada', 'Puri', 'Bonda'];
+  -var item2=['Veg Rice', 'Curd Rice', 'Tomato Rice', 'Jeera Rice'];
+  -var p2=[70,60,50,60];
+  -var item3=['Veg Biryani', 'Dumb Biryani', 'Mutton Biryani', 'Fish Biryani'];
+  -var p3=[120,140,160,180];
+  -var item4= ['Juicy Mandi', 'Veg Mandi', 'Mutton Mandi', 'Combo Mandi'];
+  -var p4=[450,340,400,500];
+  -var item5= ['cakes', 'candies', 'cookies', 'Ice cream'];
+  -var p5=[50,20,20,40];
+  .row
+    .col-xs-12.col-sm-8
+      form#homelist.form-horizontal(action='url', method='post', role='form')
+        .form-group
+          .col-xs-12
+            h1(style='font-family: Roboto;') TIFFINS
+            .tiffin-container
+
+              each i,ind in item
+                -var price=p[ind];
+                .tiffin-item
+                  img(src=`./images/${i}.jpg`,width=150,height=150, alt=`${i}`)
+                  h3= i
+                  p Price: RS. #{price}
+                  p Health Benefits: ...
+
+        .form-group
+          .col-xs-12
+            h1(style='font-family: Roboto;') MEALS
+            .tiffin-container
+              each i,ind in item2 
+                -var price=p2[ind] 
+                .tiffin-item
+                  img(src=`./images/${i}.jpg`,width=150,height=150, alt=`${i}`)
+                  h3= item
+                  p Price: RS. #{price}
+                  p Health Benefits: ...
+        .form-group
+          .col-xs-12
+            h1(style='font-family: Roboto;') BIRYANI
+            .tiffin-container
+              each item,ind in item3
+                -var price=p3[ind]
+                .tiffin-item
+                  img(src=`./images/${item}.jpg`,width=150,height=150, alt=`${item}`)
+                  h3= item
+                  p Price: RS. #{price}
+                  p Health Benefits: ...
+        .form-group
+          .col-xs-12
+            h1(style='font-family: Roboto;') MANDI
+            .tiffin-container
+              each item,ind in item4
+                -var price=p4[ind]
+                .tiffin-item
+                  img(src=`./images/${item}.jpg`,width=150,height=150, alt=`${item}`)
+                  h3= item
+                  p Price: RS. #{price}
+                  p Health Benefits: ...
+        .form-group
+          .col-xs-12
+            h1(style='font-family: Roboto;') DESSERTS
+            .tiffin-container
+              each item,ind in item5
+                -var price=p5[ind]
+                .tiffin-item
+                  img(src=`./images/${item}.jpg`,width=150,height=150, alt=`${item}`)
+                  h3= item
+                  p Price: RS. #{price}
+                  p Health Benefits: ...
